@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"web-api/Controller"
 	"web-api/utils"
 )
 
@@ -11,10 +12,11 @@ func main() {
 		panic(err)
 	}
 	router := gin.Default()
-	router.GET("/", func(c *gin.Context) {
-		c.JSON(200, map[string]interface{}{
-			"code": 1,
-		})
-	})
+	registerRouter(router)
 	router.Run(acf.AppHost + ":" + acf.AppPort)
+}
+
+// 路由配置
+func registerRouter(router *gin.Engine) {
+	new(Controller.SmsCodeController).Router(router)
 }

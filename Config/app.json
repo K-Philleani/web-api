@@ -2,5 +2,12 @@
   "app_name": "web-api",
   "app_mode": "debug",
   "app_host": "localhost",
-  "app_port": "9091"
+  "app_port": "9091",
+  "sms": {
+    "sign_name": "KpShople",
+    "template_code": "SMS_205404825",
+    "access_key": "LTAI4GALXYJDziEkc5iffcLf",
+    "access_secret": "f9DvqXJEDhLuZ2jZwgd7hLBQzmsa08",
+    "region_id": "cn-hangzhou"
+  }
 }

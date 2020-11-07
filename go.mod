@@ -3,6 +3,7 @@ module web-api
 go 1.15
 
 require (
+	github.com/aliyun/alibaba-cloud-sdk-go v1.61.623
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-playground/validator/v10 v10.4.0 // indirect
 	github.com/golang/protobuf v1.4.3 // indirect
