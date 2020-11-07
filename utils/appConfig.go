@@ -7,11 +7,12 @@ import (
 )
 
 type AppConfig struct {
-	AppName string    `json:"app_name"`
-	AppMode string    `json:"app_mode"`
-	AppHost string    `json:"app_host"`
-	AppPort string    `json:"app_port"`
-	Sms     SmsConfig `json:"sms"`
+	AppName  string    `json:"app_name"`
+	AppMode  string    `json:"app_mode"`
+	AppHost  string    `json:"app_host"`
+	AppPort  string    `json:"app_port"`
+	Sms      SmsConfig `json:"sms"`
+	DataBase DataBase  `json:"database"`
 }
 
 type SmsConfig struct {
@@ -22,9 +23,15 @@ type SmsConfig struct {
 	RegionId     string `json:"region_id"`
 }
 
+type DataBase struct {
+	Driver  string `json:"driver"`
+	Address string `json:"address"`
+	Charset string `json:"charset"`
+}
+
 var _acf *AppConfig
 
-func GetConfig() *AppConfig{
+func GetConfig() *AppConfig {
 	return _acf
 }
 

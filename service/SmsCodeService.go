@@ -7,6 +7,8 @@ import (
 	"log"
 	"math/rand"
 	"time"
+	"web-api/dao"
+	"web-api/model"
 	"web-api/utils"
 )
 
@@ -42,7 +44,15 @@ func (ss *SmsCodeService) SendCode(phone string) bool{
 		return false
 	}
 	if response.Code == "OK" {
-		return true
+		sms := model.SmsCode{
+			Phone:      phone,
+			BizId:      response.BizId,
+			Code:       code,
+			CreateTime: time.Now().Unix(),
+		}
+		smsDao := new(dao.SmsCodeDao)
+		row := smsDao.InsertCode(sms)
+		return row>0
 	}
 
 	return false

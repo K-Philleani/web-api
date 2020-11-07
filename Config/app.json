@@ -9,5 +9,10 @@
     "access_key": "LTAI4GALXYJDziEkc5iffcLf",
     "access_secret": "f9DvqXJEDhLuZ2jZwgd7hLBQzmsa08",
     "region_id": "cn-hangzhou"
+  },
+  "database": {
+    "driver": "mysql",
+    "address": "root:123456@tcp(124.70.71.78:3306)/webApi",
+    "charset": "utf8"
   }
 }

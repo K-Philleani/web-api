@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"log"
 	"web-api/Controller"
 	"web-api/utils"
 )
@@ -12,6 +13,11 @@ func main() {
 		panic(err)
 	}
 	router := gin.Default()
+	err = utils.OrmEngine(acf)
+	if err != nil {
+		panic(err)
+	}
+	log.Println("数据库连接成功...")
 	registerRouter(router)
 	router.Run(acf.AppHost + ":" + acf.AppPort)
 }
